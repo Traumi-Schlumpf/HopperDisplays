@@ -1,7 +1,7 @@
 package de.traumi.hopperdisplay.listener;
 
 
-import de.traumi.hopperdisplay.Hopperdisplay;
+import de.traumi.hopperdisplay.HopperDisplay;
 import de.traumi.hopperdisplay.commands.CreateHopperDisplayCommand;
 import org.bukkit.event.Listener;
 import org.bukkit.Bukkit;
@@ -13,11 +13,11 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 
 public class HopperListener implements Listener {
-    private final Hopperdisplay plugin;
+    private final HopperDisplay plugin;
     private CreateHopperDisplayCommand createhopperdisplayCommand;
 
 
-    public HopperListener(Hopperdisplay plugin) {
+    public HopperListener(HopperDisplay plugin) {
         this.plugin = plugin;
         this.createhopperdisplayCommand = new CreateHopperDisplayCommand(plugin);
         Bukkit.getPluginManager().registerEvents(this, plugin);
@@ -48,7 +48,7 @@ public class HopperListener implements Listener {
                 }
                 this.plugin.getConfig().set("display.amount", itemCount);
                 this.plugin.saveConfig();
-                Hopperdisplay.setDisplay();
+                HopperDisplay.setDisplay();
             }, 1);
         }
     }

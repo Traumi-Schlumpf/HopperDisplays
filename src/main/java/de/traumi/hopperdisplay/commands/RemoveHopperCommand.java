@@ -1,6 +1,6 @@
 package de.traumi.hopperdisplay.commands;
 
-import de.traumi.hopperdisplay.Hopperdisplay;
+import de.traumi.hopperdisplay.HopperDisplay;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.Command;
@@ -16,9 +16,9 @@ import java.util.List;
 
 public class RemoveHopperCommand implements CommandExecutor, TabCompleter {
 
-    private final Hopperdisplay plugin;
+    private final HopperDisplay plugin;
 
-    public RemoveHopperCommand(Hopperdisplay plugin) {
+    public RemoveHopperCommand(HopperDisplay plugin) {
         this.plugin = plugin;
     }
     @Override

@@ -1,9 +1,11 @@
-name: Hopperdisplay
+name: HopperDisplay
 version: '${version}'
-main: de.traumi.hopperdisplay.Hopperdisplay
+main: de.traumi.hopperdisplay.HopperDisplay
 api-version: 1.20
 authors: [ Crafter_Y, Traumi ]
+website: "https://github.com/Traumi-Schlumpf/HopperDisplays"
 depend: [HolographicDisplays]
+
 commands:
   sethopper:
     description: "Wähle deinen Display Hopper aus."

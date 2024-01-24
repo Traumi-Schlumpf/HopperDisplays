@@ -1,6 +1,6 @@
 package de.traumi.hopperdisplay.commands;
 
-import de.traumi.hopperdisplay.Hopperdisplay;
+import de.traumi.hopperdisplay.HopperDisplay;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Location;
@@ -19,9 +19,9 @@ import java.util.List;
 
 public class CreateHopperDisplayCommand implements CommandExecutor, TabCompleter {
 
-    private final Hopperdisplay plugin;
+    private final HopperDisplay plugin;
 
-    public CreateHopperDisplayCommand(Hopperdisplay plugin) {
+    public CreateHopperDisplayCommand(HopperDisplay plugin) {
         this.plugin = plugin;
     }
 
@@ -40,8 +40,9 @@ public class CreateHopperDisplayCommand implements CommandExecutor, TabCompleter
         }
 
         int maxAmount;
-        try {maxAmount = Integer.parseInt(args[0]);}
-        catch (NumberFormatException e) {
+        try {
+            maxAmount = Integer.parseInt(args[0]);
+        } catch (NumberFormatException e) {
             sender.sendMessage(Component.text("Du musst eine Zahl angeben.").color(NamedTextColor.RED));
             return true;
         }
@@ -64,7 +65,7 @@ public class CreateHopperDisplayCommand implements CommandExecutor, TabCompleter
         }
         config.set("display.owner", player.getName());
         this.plugin.saveConfig();
-        Hopperdisplay.setDisplay();
+        HopperDisplay.setDisplay();
         player.sendMessage(Component.text("Du hast den Trichter erfolgereich ausgewählt.").color(NamedTextColor.GREEN));
         return true;
     }

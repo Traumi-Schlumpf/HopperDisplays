@@ -7,7 +7,6 @@ import de.traumi.hopperdisplay.commands.SetHopperCommand;
 import de.traumi.hopperdisplay.listener.HopperListener;
 import me.filoghost.holographicdisplays.api.HolographicDisplaysAPI;
 import me.filoghost.holographicdisplays.api.hologram.Hologram;
-import me.filoghost.holographicdisplays.api.hologram.line.TextHologramLine;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -22,9 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public final class Hopperdisplay extends JavaPlugin {
+public final class HopperDisplay extends JavaPlugin {
 
-    private static Hopperdisplay plugin;
+    private static HopperDisplay plugin;
     private static FileConfiguration config = null;
     private static String displayWorld = null;
     private static Integer displayX = null;

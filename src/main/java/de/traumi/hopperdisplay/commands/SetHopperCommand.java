@@ -1,7 +1,7 @@
 package de.traumi.hopperdisplay.commands;
 
 
-import de.traumi.hopperdisplay.Hopperdisplay;
+import de.traumi.hopperdisplay.HopperDisplay;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Location;
@@ -22,9 +22,9 @@ import java.util.List;
 
 
 public class SetHopperCommand implements CommandExecutor, TabCompleter {
-    private final Hopperdisplay plugin;
+    private final HopperDisplay plugin;
 
-    public SetHopperCommand(Hopperdisplay plugin) {
+    public SetHopperCommand(HopperDisplay plugin) {
         this.plugin = plugin;
     }
 
