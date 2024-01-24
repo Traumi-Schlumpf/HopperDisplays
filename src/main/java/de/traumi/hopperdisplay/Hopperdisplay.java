@@ -94,7 +94,6 @@ public final class Hopperdisplay extends JavaPlugin {
             }
             display.setPosition(displayposition);
             String displayworld = config.getString("display.world");
-            assert displayworld != null;
 
             Integer displayamount = config.getInt("display.amount");
             Integer displaymaxamount = config.getInt("display.maxamount");

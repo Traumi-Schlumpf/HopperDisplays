@@ -31,7 +31,7 @@ public class SetHopperCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage(Component.text("Dieser Befehl kann nur von Spielern ausgeführt werden").color(NamedTextColor.RED));
+            sender.sendMessage(Component.text("Dieser Befehl kann nur von Spielern ausgeführt werden.").color(NamedTextColor.RED));
             return true;
         }
 
