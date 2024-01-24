@@ -1,0 +1,34 @@
+name: Hopperdisplay
+version: '${version}'
+main: de.traumi.hopperdisplay.Hopperdisplay
+api-version: 1.20
+authors: [ Crafter_Y, Traumi ]
+depend: [HolographicDisplays]
+commands:
+  sethopper:
+    description: "Wähle deinen Display Hopper aus."
+    usage: "/hopper <item>"
+    permission: hopperdisplay.sethopper
+  removehopper:
+    description: "Entferne die Verbindung von den Hopper."
+    usage: "/removehopper"
+    permission: hopperdisplay.removehopper
+  createhopperdisplay:
+    description: "Erstelle dein Display für dein Hopper."
+    usage: "/createhopperdisplay <Anzahl>"
+    permission: hopperdisplay.createhopperdisplay
+
+permissions:
+  hopperdisplay.*:
+    description: Permission to use all commands
+    default: op
+    children:
+      hopperdisplay.sethopper:
+        description: Permission to set the hopper to count items
+        default: op
+      hopperdisplay.createhopperdisplay:
+        description: Permission to set the display
+        default: op
+      hopperdisplay.removehopper:
+        description: Permission to set the display
+        default: op
