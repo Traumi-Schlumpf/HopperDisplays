@@ -54,7 +54,7 @@ public final class HopperDisplay extends JavaPlugin {
             return;
         }
         this.registerCommand("sethopper", new SetHopperCommand(this));
-        this.registerCommand("createhoppperdisplay", new CreateHopperDisplayCommand(this));
+        this.registerCommand("createhopperdisplay", new CreateHopperDisplayCommand(this));
         this.registerCommand("removehopper", new RemoveHopperCommand(this));
 
         Bukkit.getPluginManager().registerEvents(new HopperListener(this), this);
@@ -80,6 +80,7 @@ public final class HopperDisplay extends JavaPlugin {
 
     public static void setDisplay(){
         if(config.contains("display.world") && config.contains("hopper.material") && config.contains("display.world")) {
+            displayWorld = config.getString("display.world");
             displayX = config.getInt("display.x");
             displayY = config.getInt("display.y");
             displayZ = config.getInt("display.z");
@@ -92,8 +93,6 @@ public final class HopperDisplay extends JavaPlugin {
                 display.setPosition(displayPosition);
             }
             display.setPosition(displayPosition);
-            displayWorld = config.getString("display.world");
-
             displayAmount = config.getInt("display.amount");
             displayMaxAmount = config.getInt("display.maxamount");
             String material = config.getString("hopper.material");
