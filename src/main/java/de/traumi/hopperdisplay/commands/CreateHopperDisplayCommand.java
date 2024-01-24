@@ -51,13 +51,13 @@ public class CreateHopperDisplayCommand implements CommandExecutor, TabCompleter
             return true;
         }
 
-        Location playerpos = player.getLocation();
+        Location playerPos = player.getLocation();
 
         FileConfiguration config =  plugin.getConfig();
-        config.set("display.x", playerpos.getBlockX());
-        config.set("display.y", playerpos.getBlockY());
-        config.set("display.z", playerpos.getBlockZ());
-        config.set("display.world", playerpos.getWorld().getName());
+        config.set("display.x", playerPos.getBlockX());
+        config.set("display.y", playerPos.getBlockY());
+        config.set("display.z", playerPos.getBlockZ());
+        config.set("display.world", playerPos.getWorld().getName());
         config.set("display.maxamount", maxAmount);
         if(!config.contains("display.amount")) {
             config.set("display.amount", 0);

@@ -26,14 +26,14 @@ public final class Hopperdisplay extends JavaPlugin {
 
     private static Hopperdisplay plugin;
     private static FileConfiguration config = null;
-    private static String displayworld = null;
-    private static Integer displayx = null;
-    private static Integer displayy = null;
-    private static Integer displayz = null;
-    private static Integer displayamount = null;
-    private static Integer displaymaxamount = null;
+    private static String displayWorld = null;
+    private static Integer displayX = null;
+    private static Integer displayY = null;
+    private static Integer displayZ = null;
+    private static Integer displayAmount = null;
+    private static Integer displayMaxAmount = null;
     private static HolographicDisplaysAPI api = null;
-    private static Location displayposition = null;
+    private static Location displayPosition = null;
     private static Hologram display = null;
     private final List<String> registeredCommands = new ArrayList<>();
 
@@ -41,12 +41,12 @@ public final class Hopperdisplay extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         config = plugin.getConfig();
-        displayworld = config.getString("display.world");
-        displayx = config.getInt("display.x");
-        displayy = config.getInt("display.y");
-        displayz = config.getInt("display.z");
-        displayamount = config.getInt("display.amount");
-        displaymaxamount = config.getInt("display.maxamount");
+        displayWorld = config.getString("display.world");
+        displayX = config.getInt("display.x");
+        displayY = config.getInt("display.y");
+        displayZ = config.getInt("display.z");
+        displayAmount = config.getInt("display.amount");
+        displayMaxAmount = config.getInt("display.maxamount");
         setDisplay();
         if (!Bukkit.getPluginManager().isPluginEnabled("HolographicDisplays")) {
             getLogger().severe("*** HolographicDisplays is not installed or not enabled. ***");
@@ -81,27 +81,27 @@ public final class Hopperdisplay extends JavaPlugin {
 
     public static void setDisplay(){
         if(config.contains("display.world") && config.contains("hopper.material") && config.contains("display.world")) {
-            Integer displayx = config.getInt("display.x");
-            Integer displayy = config.getInt("display.y");
-            Integer displayz = config.getInt("display.z");
-            displayposition = new Location(Bukkit.getWorld(displayworld), displayx, displayy, displayz);
+            displayX = config.getInt("display.x");
+            displayY = config.getInt("display.y");
+            displayZ = config.getInt("display.z");
+            displayPosition = new Location(Bukkit.getWorld(displayWorld), displayX, displayY, displayZ);
             if(display==null){
                 api = HolographicDisplaysAPI.get(plugin);
-                display = api.createHologram(displayposition);
+                display = api.createHologram(displayPosition);
             }else{
                 display.getLines().clear();
-                display.setPosition(displayposition);
+                display.setPosition(displayPosition);
             }
-            display.setPosition(displayposition);
-            String displayworld = config.getString("display.world");
+            display.setPosition(displayPosition);
+            displayWorld = config.getString("display.world");
 
-            Integer displayamount = config.getInt("display.amount");
-            Integer displaymaxamount = config.getInt("display.maxamount");
+            displayAmount = config.getInt("display.amount");
+            displayMaxAmount = config.getInt("display.maxamount");
             String material = config.getString("hopper.material");
 
 
-            TextHologramLine ersteZeile = display.getLines().appendText(displayamount + " von " + displaymaxamount);
-            TextHologramLine  zweiteZeile = display.getLines().appendText("Gesuchtes Item: " + ChatColor.AQUA + material.toLowerCase());
+            display.getLines().appendText(displayAmount + " von " + displayMaxAmount);
+            display.getLines().appendText("Gesuchtes Item: " + ChatColor.AQUA + material.toLowerCase());
         }
     }
 
