@@ -66,7 +66,7 @@ public class CreateHopperDisplayCommand implements CommandExecutor, TabCompleter
         config.set("display.owner", player.getName());
         this.plugin.saveConfig();
         HopperDisplay.setDisplay();
-        player.sendMessage(Component.text("Du hast den Trichter erfolgereich ausgewählt.").color(NamedTextColor.GREEN));
+        player.sendMessage(Component.text("Du hast das Display erfolgreich erstellt.").color(NamedTextColor.GREEN));
         return true;
     }
 
