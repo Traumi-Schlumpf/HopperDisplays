@@ -79,7 +79,7 @@ public final class HopperDisplay extends JavaPlugin {
 
 
     public static void setDisplay(){
-        if(config.contains("display.world") && config.contains("hopper.material") && config.contains("display.world")) {
+        if(config.contains("display.world") && config.contains("hopper.material")) {
             displayWorld = config.getString("display.world");
             displayX = config.getInt("display.x");
             displayY = config.getInt("display.y");
